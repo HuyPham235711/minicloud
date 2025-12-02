@@ -1,0 +1,3 @@
+# HELP nginx_custom_metric Dummy metric for demo
+# TYPE nginx_custom_metric counter
+nginx_custom_metric 1

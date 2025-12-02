@@ -1,0 +1,85 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker và Container Technology</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #2ecc71; padding-bottom: 10px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
+        .nav { margin: 20px 0; }
+        .nav a { color: #2ecc71; text-decoration: none; margin-right: 15px; }
+        .nav a:hover { text-decoration: underline; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="blog1.html">← Bài trước</a> | <a href="/blog/">Blog</a> | <a href="/">Home</a>
+    </div>
+    <h1>Docker và Container Technology</h1>
+    <img src="https://via.placeholder.com/800x400/2ecc71/ffffff?text=Docker+Containers" alt="Docker Architecture" style="width:100%; max-width:800px; margin:20px 0;">
+    <p><em>Ngày đăng: 17/11/2025 | Tác giả: Pham Gia Huy & Pham Khanh Linh</em></p>
+    
+    <h2>Docker là gì?</h2>
+    <p>Docker là nền tảng mã nguồn mở giúp đóng gói ứng dụng và tất cả dependencies vào một <strong>container</strong> độc lập. Container nhẹ hơn, khởi động nhanh hơn so với máy ảo truyền thống.</p>
+    
+    <h2>Sự khác biệt: Container vs Virtual Machine</h2>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <tr style="background: #ecf0f1;">
+            <th>Tiêu chí</th>
+            <th>Container</th>
+            <th>Virtual Machine</th>
+        </tr>
+        <tr>
+            <td>Khởi động</td>
+            <td>Vài giây</td>
+            <td>Vài phút</td>
+        </tr>
+        <tr>
+            <td>Kích thước</td>
+            <td>MB</td>
+            <td>GB</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>Gần native</td>
+            <td>Chậm hơn</td>
+        </tr>
+        <tr>
+            <td>Cô lập</td>
+            <td>Process-level</td>
+            <td>Full isolation</td>
+        </tr>
+    </table>
+    
+    <h2>Các thành phần chính của Docker</h2>
+    <ul>
+        <li><strong>Image:</strong> Template chứa OS + code + dependencies</li>
+        <li><strong>Container:</strong> Instance chạy từ image</li>
+        <li><strong>Dockerfile:</strong> File script để build image</li>
+        <li><strong>Docker Compose:</strong> Tool quản lý nhiều container</li>
+    </ul>
+    
+    <h2>Ví dụ lệnh cơ bản</h2>
+    <pre style="background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px;">
+# Pull image từ Docker Hub
+docker pull nginx:latest
+
+# Chạy container
+docker run -d -p 80:80 --name my-nginx nginx
+
+# Xem container đang chạy
+docker ps
+
+# Stop container
+docker stop my-nginx
+    </pre>
+    
+    <p><strong>Kết luận:</strong> Docker đã cách mạng hóa cách deploy ứng dụng, giúp DevOps workflow trở nên đơn giản và hiệu quả hơn.</p>
+    
+    <div class="nav">
+        <a href="blog3.html">Bài tiếp theo: Monitoring với Prometheus & Grafana →</a>
+    </div>
+</body>
+</html>

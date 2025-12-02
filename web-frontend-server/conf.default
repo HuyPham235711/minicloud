@@ -11,4 +11,10 @@ server {
     index index.html;
     autoindex off;
   }
+
+  location /metrics {
+    default_type text/plain;
+    alias /usr/share/nginx/html/metrics;
+}
+  
 }

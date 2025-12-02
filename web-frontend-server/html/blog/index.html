@@ -1,1 +1,89 @@
-<h1>MyMiniCloud – Blog</h1><a href="/">Back</a>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - MyMiniCloud</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            max-width: 900px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        h1 { 
+            color: #2c3e50; 
+            border-bottom: 4px solid #3498db; 
+            padding-bottom: 15px; 
+        }
+        .nav { 
+            margin: 20px 0; 
+            padding: 10px; 
+            background: white; 
+            border-radius: 5px;
+        }
+        .nav a { 
+            color: #3498db; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        .nav a:hover { text-decoration: underline; }
+        .blog-list { list-style: none; padding: 0; }
+        .blog-item { 
+            background: white; 
+            padding: 20px; 
+            margin: 15px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .blog-item:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .blog-item h3 { margin-top: 0; color: #2c3e50; }
+        .blog-item a { 
+            color: #3498db; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        .blog-item a:hover { text-decoration: underline; }
+        .blog-meta { color: #7f8c8d; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">← Quay lại Home</a>
+    </div>
+    
+    <h1>Blog của Pham Gia Huy & Pham Khanh Linh</h1>
+    <p style="color: #7f8c8d;">Chia sẻ kiến thức về Cloud Computing, Docker và DevOps</p>
+    
+    <ul class="blog-list">
+        <li class="blog-item">
+            <h3>Giới thiệu về Cloud Computing</h3>
+            <p class="blog-meta">17/11/2025 | 5 phút đọc</p>
+            <p>Tìm hiểu về điện toán đám mây, các mô hình dịch vụ IaaS/PaaS/SaaS và ưu điểm của Cloud Computing trong doanh nghiệp hiện đại.</p>
+            <a href="blog1.html">Đọc tiếp →</a>
+        </li>
+        
+        <li class="blog-item">
+            <h3>Docker và Container Technology</h3>
+            <p class="blog-meta">17/11/2025 | 6 phút đọc</p>
+            <p>So sánh Container vs Virtual Machine, tìm hiểu các thành phần của Docker và các lệnh cơ bản để làm việc với container.</p>
+            <a href="blog2.html">Đọc tiếp →</a>
+        </li>
+        
+        <li class="blog-item">
+            <h3>Monitoring với Prometheus và Grafana</h3>
+            <p class="blog-meta">17/11/2025 | 7 phút đọc</p>
+            <p>Hướng dẫn giám sát hệ thống với Prometheus và Grafana, các metrics quan trọng cần theo dõi trong môi trường production.</p>
+            <a href="blog3.html">Đọc tiếp →</a>
+        </li>
+    </ul>
+    
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 8px;">
+        <p style="color: #7f8c8d;"><strong>Dự án:</strong> MyMiniCloud - Hệ thống Cloud thu nhỏ với 11 services</p>
+    </div>
+</body>
+</html>

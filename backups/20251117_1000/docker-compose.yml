@@ -18,15 +18,6 @@ services:
     ports: ["8083:80"]
     restart: unless-stopped
 
-  # 1b. WEB SERVER 2 (Load Balancing)
-  web-frontend-server2:
-    build: ./web-frontend-server
-    image: pklinh/web:dev
-    container_name: web-frontend-server2
-    networks: [cloud-net]
-    ports: ["8082:80"]
-    restart: unless-stopped
-
   # 2. APP SERVER
   application-backend-server:
     build: ./application-backend-server
@@ -130,7 +121,6 @@ services:
     image: nginx:stable
     container_name: api-gateway-proxy-server
     depends_on:
-      - web-frontend-server2
       - web-frontend-server
       - application-backend-server
       - authentication-identity-server

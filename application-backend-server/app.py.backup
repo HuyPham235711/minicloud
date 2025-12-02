@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
-import time, requests, os, json
+import time, requests, os
+from jose import jwt
 
 ISSUER = os.getenv("OIDC_ISSUER", "http://authentication-identity-server:8080/realms/master")
 AUDIENCE = os.getenv("OIDC_AUDIENCE", "myapp")
@@ -34,15 +35,11 @@ def secure():
 
 @app.get("/student")
 def get_students():
-    try:
-        with open("students.json", "r") as f:
-            students = json.load(f)
-        return jsonify(students)
-    except FileNotFoundError:
-        return jsonify([
-            {"id": 1, "name": "Pham Gia Huy", "student_id": "22110044", "major": "IT", "gpa": 3.45},
-            {"id": 2, "name": "Pham Khanh Linh", "student_id": "22110053", "major": "IT", "gpa": 3.67}
-        ])
+    return jsonify([
+        {"id": 1, "name": "Pham Gia Huy", "major": "IT"},
+        {"id": 2, "name": "Pham Khanh Linh", "major": "IT"},
+    ])
+
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=8081)

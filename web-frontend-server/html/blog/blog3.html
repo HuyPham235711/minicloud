@@ -1,0 +1,76 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring với Prometheus và Grafana</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
+        .nav { margin: 20px 0; }
+        .nav a { color: #e74c3c; text-decoration: none; margin-right: 15px; }
+        .nav a:hover { text-decoration: underline; }
+        .highlight { background: #ffe4e1; padding: 10px; border-left: 4px solid #e74c3c; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="blog2.html">← Bài trước</a> | <a href="/blog/">Blog</a> | <a href="/">Home</a>
+    </div>
+    <h1>Monitoring với Prometheus và Grafana</h1>
+    <img src="https://via.placeholder.com/800x400/e74c3c/ffffff?text=Monitoring+Dashboard" alt="Monitoring System" style="width:100%; max-width:800px; margin:20px 0;">
+    <p><em>Ngày đăng: 17/11/2025 | Tác giả: Pham Gia Huy & Pham Khanh Linh</em></p>
+    
+    <h2>Tại sao cần Monitoring?</h2>
+    <p>Trong môi trường production, việc giám sát hệ thống là <strong>BẮT BUỘC</strong> để:</p>
+    <ul>
+        <li>Phát hiện sự cố sớm trước khi ảnh hưởng người dùng</li>
+        <li>Theo dõi hiệu năng và xu hướng tăng trưởng</li>
+        <li>Tối ưu hóa tài nguyên (CPU, RAM, Disk, Network)</li>
+        <li>Phân tích nguyên nhân khi có downtime</li>
+    </ul>
+    
+    <h2>Prometheus - Time Series Database</h2>
+    <p>Prometheus là hệ thống monitoring mã nguồn mở, sử dụng mô hình <strong>pull-based</strong> để thu thập metrics từ các target.</p>
+    
+    <div class="highlight">
+        <strong>Ưu điểm:</strong><br>
+        Cấu hình đơn giản qua YAML<br>
+        PromQL - ngôn ngữ query mạnh mẽ<br>
+        Service Discovery tự động<br>
+        Alerting tích hợp sẵn
+    </div>
+    
+    <h2>Grafana - Data Visualization</h2>
+    <p>Grafana giúp trực quan hóa dữ liệu từ Prometheus (và nhiều datasource khác) thành các dashboard đẹp mắt, dễ hiểu.</p>
+    
+    <h2>Metrics quan trọng cần theo dõi</h2>
+    <ol>
+        <li><strong>CPU Usage:</strong> Nếu > 80% liên tục → cần scale up</li>
+        <li><strong>Memory Usage:</strong> RAM free < 10% → nguy cơ OOM</li>
+        <li><strong>Disk I/O:</strong> Latency cao → database sẽ chậm</li>
+        <li><strong>Network Traffic:</strong> Bandwidth usage và packet loss</li>
+        <li><strong>Response Time:</strong> API latency phải < 200ms</li>
+    </ol>
+    
+    <h2>Demo trong dự án MiniCloud</h2>
+    <p>Trong hệ thống của chúng tôi, Prometheus thu thập metrics từ:</p>
+    <ul>
+        <li>Node Exporter → Hardware/OS metrics</li>
+        <li>Web Frontend Server → HTTP request metrics</li>
+        <li>Docker containers → Container stats</li>
+    </ul>
+    
+    <p>Grafana hiển thị dashboard <strong>"System Health"</strong> với 3 panel chính: CPU, Memory, Network Traffic.</p>
+    
+    <div class="highlight">
+        <strong>Best Practice:</strong> Thiết lập alerting rule để nhận thông báo qua Email/Slack khi có bất thường!
+    </div>
+    
+    <p><strong>Kết luận:</strong> Prometheus + Grafana là combo hoàn hảo cho monitoring trong môi trường Cloud và Container.</p>
+    
+    <div class="nav">
+        <a href="/blog/">← Quay lại danh sách blog</a>
+    </div>
+</body>
+</html>

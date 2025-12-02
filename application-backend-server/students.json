@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Pham Gia Huy",
+    "student_id": "22110044",
+    "major": "Information Technology",
+    "gpa": 3.45
+  },
+  {
+    "id": 2,
+    "name": "Pham Khanh Linh",
+    "student_id": "22110053",
+    "major": "Information Technology",
+    "gpa": 3.67
+  },
+  {
+    "id": 3,
+    "name": "Nguyen Van An",
+    "student_id": "22110012",
+    "major": "Computer Science",
+    "gpa": 3.21
+  },
+  {
+    "id": 4,
+    "name": "Tran Thi Binh",
+    "student_id": "22110089",
+    "major": "Software Engineering",
+    "gpa": 3.78
+  },
+  {
+    "id": 5,
+    "name": "Le Hoang Nam",
+    "student_id": "22110067",
+    "major": "Information Technology",
+    "gpa": 3.52
+  }
+]
